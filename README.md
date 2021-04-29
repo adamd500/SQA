@@ -1,7 +1,7 @@
 # SQA
 Demonstrating Software Quality
 
-#Sprint backlog #
+**Sprint backlog**
 
 | Sprint 	|                                                                                                         Task                                                                                                        	| Estimate 	| Points 	| Priority 	|      Status 	| Developer 	|
 |-------:	|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|---------:	|--------	|---------:	|------------:	|-----------	|
@@ -22,9 +22,9 @@ Sprint 3
 Sprint 3 has a velocity of 8. This estimate has been calculated by comparison to task 3 of sprint 2, which involves research and testing. In this sprint a testing tool must be ran and appropriate tests added to improve the test quality. 
 
 
-#Code Review Checklist #
+**Code Review Checklist**
 
-Before any code is merged, please follow these checks to ensure code is up to standard and follows the same format.
+Before any code is merged, please follow these checks to ensure code is up to standard and follows the same format. When reviewing a pull request please review the code with these points in mind before approving and merging.
 
 - All code is accompanied with unit tests to ensure efficiency
 - All code has documentation for the next reviewer and future developer
