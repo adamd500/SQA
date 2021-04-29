@@ -5,7 +5,7 @@ Demonstrating Software Quality
 
 | Sprint 	|                                                                                                         Task                                                                                                        	| Estimate 	| Points 	| Priority 	|      Status 	| Developer 	|
 |-------:	|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|---------:	|--------	|---------:	|------------:	|-----------	|
-|    1   	| Create Code Review Checklist                                                                                                                                                                                        	|  20 mins 	| 1      	|   High   	| Not Started 	| Adam      	|
+|    1   	| Create Code Review Checklist                                                                                                                                                                                        	|  20 mins 	| 1      	|   High   	| Complete 	| Adam      	|
 |    1   	| Create Object Classes                                                                                                                                                                                               	|  20 mins 	| 1      	|   High   	| Not Started 	| Adam      	|
 |    2   	| Create functionality to create rubric with ability to add criterion, get list of all rubrics and get specific rubric. Include unit tests                                                                            	|    2h    	| 6      	|   High   	| Not Started 	| Adam      	|
 |    2   	| Create functionality for new Student Grade allowing for addition of a score for a particular criterion for a grade. Add functionality to get all student grades associated with specific rubric. Include unit tests 	|    2h    	| 6      	|   High   	| Not Started 	| Adam      	|
@@ -20,3 +20,13 @@ Sprint 2 has a velocity of 20. This score has been calculated by the established
 
 Sprint 3
 Sprint 3 has a velocity of 8. This estimate has been calculated by comparison to task 3 of sprint 2, which involves research and testing. In this sprint a testing tool must be ran and appropriate tests added to improve the test quality. 
+
+
+#Code Review Checklist #
+
+Before any code is merged, please follow these checks to ensure code is up to standard and follows the same format.
+
+- All code is accompanied with unit tests to ensure efficiency
+- All code has documentation for the next reviewer and future developer
+- Code is understandable
+- Code is fit for purpose
