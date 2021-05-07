@@ -21,6 +21,8 @@ public class Rubric {
 		this.title = title;
 	}
 
+
+
 	public String getTitle() {
 		return title;
 	}
