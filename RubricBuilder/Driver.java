@@ -1,8 +1,10 @@
 package RubricBuilder;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
@@ -20,6 +22,9 @@ public class Driver {
 	 * @param studentScores - a hashmap of student criteria and its corresponding score
 	 * @param studentName - the name of the student associated with the scores
 	 * @param grades- the list of student grade objects containing student scores and student name
+	 * @param selectedRubric- the rubric of choice of which the student grades will have calculations performed on
+	 * @param criterion - the specific criterion to have calculations performed on
+	 * @param minOrMax - the position of the array being asked for  
 	 */
 
 	List<Rubric> rubrics = new ArrayList<Rubric>();
@@ -74,6 +79,53 @@ public class Driver {
 			}
 		}
 		return gradeMatches;
+	}
+	
+	
+	
+	public int getAverage(Rubric selectedRubric, String criterion) {
+		
+		 int total =0;
+		for(StudentGrade thisGrade :selectedRubric.getStudentGrades()) {
+			total = total+thisGrade.getStudentScore().get(criterion);
+		}
+		int average = Math.round(total/selectedRubric.getStudentGrades().size());
+
+		return average;
+	}
+	
+	
+	
+	public int getRange(Rubric selectedRubric,String criterion,String minOrMax) {
+		 List<Integer>scores = new ArrayList<Integer>();
+			int result;
+
+			for(StudentGrade thisGrade :selectedRubric.getStudentGrades()) {
+				scores.add(thisGrade.getStudentScore().get(criterion));
+			}
+			
+			Collections.sort(scores);
+			if(minOrMax.equalsIgnoreCase("Min")) {
+				result = scores.get(0);
+			}else {
+				result = scores.get(scores.size()-1);
+			}
+			return result;
+	}
+	
+	public double getStandardDeviation(Rubric selectedRubric,String criterion) {
+	
+		int average = getAverage( selectedRubric, criterion);
+		
+		int result=0;
+		for(int i=0; i<selectedRubric.getStudentGrades().size();i++) {
+			result+=Math.pow(selectedRubric.getStudentGrades().get(i).getStudentScore().get(criterion) - average, 2);
+		}
+		
+		double sum = result/(selectedRubric.getStudentGrades().size()-1);
+		double deviation = Math.sqrt(sum);
+		
+		return deviation;
 	}
 	
 	
