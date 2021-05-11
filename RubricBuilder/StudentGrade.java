@@ -36,25 +36,4 @@ public class StudentGrade {
 		this.studentScore = studentScore;
 	}
     
-//    public StudentGrade(String studentName, List<Integer> studentScore) {
-//        this.studentName = studentName;
-//        this.studentScore = studentScore;
-//    }
-//
-//    public String getStudentName() {
-//        return studentName;
-//    }
-//
-//    public void setStudentName(String studentName) {
-//        this.studentName = studentName;
-//    }
-//
-//    public List<Integer> getStudentScore() {
-//        return studentScore;
-//    }
-//
-//    public void setStudentScore(List<Integer> studentScore) {
-//        this.studentScore = studentScore;
-//    }
-    
 }
