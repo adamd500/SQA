@@ -35,6 +35,8 @@ Sprint 3 has a velocity of 8. This estimate has been calculated by comparison to
 Sprint 3 went smoother than I expected. I used the EclEmma Java Code Coverage tool from the eclipse marketplace to run code coverage. My purpose of the tool is to monitor the execution of the test suite and see how of the statements, methods and lines of code are ran as part of the tests. The tool gave me a result of 94.7%, with the missing parts being for the main method and setters. I could fortunately leave the tests as they were as this number is acceptable. I also added some comments to better explain the driver class.
 Below is the test coverage tool executing;
 
+![testCoverage](https://user-images.githubusercontent.com/76783971/117944003-a25a4c80-b304-11eb-82ef-f95136c71d70.png)
+
 
 <h2>Code Review Checklist</h2>
 
