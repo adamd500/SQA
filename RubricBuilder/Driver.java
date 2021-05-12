@@ -10,7 +10,6 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
-import JUnit.TestRunner;
 
 public class Driver {
 
@@ -30,9 +29,11 @@ public class Driver {
 	List<Rubric> rubrics = new ArrayList<Rubric>();
 	List<StudentGrade> studentGrades = new ArrayList<StudentGrade>();
 
+	//Constructor
 	public Driver() {
 	}
-
+	
+	//Creates rubric from parameters
 	public Rubric createRubric(List<String> criteria, List<StudentGrade>grades,String title) {
 		Rubric rubric = new Rubric(title);
 		rubric.setCriteria(criteria);
@@ -41,12 +42,12 @@ public class Driver {
 		return rubric;
 	}
 
-	
+	//Returns all rubrics created 
 	public List<Rubric> getAllRubrics() {
 		return rubrics;
 	}
 
-	
+	//Gets a specific rubric by requested parameter
 	public Rubric getSpecificRubric(String title) {
 		for (Rubric rubric : rubrics) {
 			if (rubric.getTitle().equalsIgnoreCase(title)) {
@@ -56,17 +57,19 @@ public class Driver {
 		return null;
 	}
 
-	
+	//Creates a grade from paramaters
 	public StudentGrade createGrade(String studentName,HashMap<String,Integer>studentScores) {
 		StudentGrade studentGrade = new StudentGrade(studentName,studentScores);
 		studentGrades.add(studentGrade);
 		return studentGrade;
 	}
 	
+	//Returns all grades created
 	public List<StudentGrade>getAllStudentGrades(){
 		return studentGrades;
 	}
 	
+	//Returns all grades within the specified rubric
 	public List<StudentGrade>getAllStudentGradesByRubric(String title){
 		
 		List<StudentGrade>gradeMatches= new ArrayList<StudentGrade>();
@@ -81,8 +84,7 @@ public class Driver {
 		return gradeMatches;
 	}
 	
-	
-	
+	//Calculates the average score of a specific criterion within a rubric
 	public int getAverage(Rubric selectedRubric, String criterion) {
 		
 		 int total =0;
@@ -94,8 +96,7 @@ public class Driver {
 		return average;
 	}
 	
-	
-	
+	//Returns the min or max of a specified criterion based on the parameter 
 	public int getRange(Rubric selectedRubric,String criterion,String minOrMax) {
 		 List<Integer>scores = new ArrayList<Integer>();
 			int result;
@@ -113,6 +114,7 @@ public class Driver {
 			return result;
 	}
 	
+	//Returns the standard deviation of a specific criterion of a rubric
 	public double getStandardDeviation(Rubric selectedRubric,String criterion) {
 	
 		int average = getAverage( selectedRubric, criterion);
@@ -127,10 +129,9 @@ public class Driver {
 		
 		return deviation;
 	}
-	
-	
+		
+	//Main method that runs all tests
 	public static void main(String[] args) {
-
 		Result result = JUnitCore.runClasses(UnitTest.class);
 
 		for (Failure failure : result.getFailures()) {

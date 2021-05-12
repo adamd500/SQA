@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -178,5 +179,8 @@ public class UnitTest {
 		//Test standard deviation
 		double actualStandardDeviation = driver.getStandardDeviation(rub, "History");
 		assertEquals(13.228,actualStandardDeviation,0.001);
+		
 	}
+	
+
 }
